@@ -28,9 +28,10 @@ def gen_active_learning(domain, candidate_items, elicitation_transcript):
         Domain:
         {domain}
 
-        The query should help distinguish between plausible user preferences,
-        priorities, trade-offs, or ranking behavior that cannot yet be inferred from
-        the existing information.
+        Come up with a potential edge case to learn as much information as you can about what their
+        desired behavior should be under different circumstances.
+        Make sure the edge case addresses different aspects of the system than the edge cases that have already
+        been considered.
 
         Consider edge cases, conflicts between ranking criteria, and cases where the
         user's preference may change under different circumstances.

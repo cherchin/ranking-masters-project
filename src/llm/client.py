@@ -1,5 +1,8 @@
+import csv
+import json
 import os
 import warnings
+from pathlib import Path
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
@@ -16,17 +19,25 @@ if not gemini_api_key:
 if not gemini_model:
     raise ValueError("GEMINI_MODEL not found in .env file.")
 
-def main():
-    # domain and candidate items hardcoded for now
-    domain = "stocks"
 
-    candidate_items = """
-    AAPL - Apple Inc.
-    TSLA - Tesla Inc.
-    NVDA - NVIDIA Corporation
-    MSFT - Microsoft Corporation
-    AMZN - Amazon.com Inc.
-    """
+def load_candidate_markets():
+    markets_path = Path(__file__).resolve().parents[1] / "FAR-Trans" / "markets.csv"
+    with markets_path.open(newline="", encoding="utf-8") as file:
+        markets = csv.DictReader(file)
+        return "\n".join(
+            f"{market['marketID']} - {market['name']} | "
+            f"Country: {market['country']} | "
+            f"Class: {market['marketClass']} | "
+            f"Trading days: {market['tradingDays']} | "
+            f"Trading hours: {market['tradingHours']} | "
+            f"Description: {market['description']}"
+            for market in markets
+        )
+
+
+def main():
+    domain = "Financial market ranking"
+    candidate_items = load_candidate_markets()
     elicitation_transcript = ""
 
     # Build domain-specific context
