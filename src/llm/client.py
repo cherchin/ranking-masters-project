@@ -47,8 +47,6 @@ def main():
         elicitation_transcript=elicitation_transcript
     )
 
-    # Combine generic active learning instructions
-    # with domain-specific ranking context
     system_instruction = f"""
         {gen_active_learning(domain, candidate_items, elicitation_transcript)}
         {gen_questions(domain, candidate_items, elicitation_transcript)}
