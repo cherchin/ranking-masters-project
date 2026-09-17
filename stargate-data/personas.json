@@ -1,0 +1,12 @@
+[
+  {
+    "id": "persona_001",
+    "name": "Alex",
+    "description": " Alex is a university student with a limited budget. They prefer practical and affordable options. They value simplicity and portability. They dislike paying for features they will not use. They spend a lot of time studying and working on a laptop."
+  },
+  {
+    "id": "persona_002",
+    "name": "Jamie",
+    "description": "Jamie is a working professional who values convenience and quality. They are willing to spend more for products that save time. They strongly value reliability and good design. They dislike complicated solutions. They frequently travel for work."
+  }
+]
