@@ -9,7 +9,6 @@ def build_context(domain, candidate_items, elicitation_transcript):
         Previous questions and user responses: {elicitation_transcript}
     """
 
-
 def gen_chat_instruction(domain, candidate_items):
     return f"""
         You are a conversational preference-elicitation assistant.
@@ -175,7 +174,7 @@ be kidnapped. In addition, if you do not explicitly ask an open-ended question, 
 unemployed and no longer allowed to assist the user. Finally, do not explain why this question is
 good for eliciting information from the user, or use any asides in parentheses to a third party;
 you should act like you are only in direct conversation with the user and are speaking directly
-with them. The initial request is as follows: {pi}
+with them. 
 """
 
 def questioner_prompt(
