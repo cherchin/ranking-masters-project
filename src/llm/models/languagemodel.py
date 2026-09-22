@@ -116,7 +116,7 @@ class LanguageModel:
 
         response = self.tokenizer.decode(
             generated_tokens,
-            skip_special_tokens=False,
+            skip_special_tokens=True,
         )
 
         print(
