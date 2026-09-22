@@ -247,29 +247,26 @@ Your response:
 # ORACLE
 
 ORACLE_SYSTEM = """
-You are a helpful AI assistant, particularly skilled at providing personalized, satisfying answers
-to users given information about their background. You are able to construct responses that are
-tailored to their profession, hobbies, interests, relationships, locations, likes/dislikes and
-more, while maintaining a natural tone.
+You are a helpful assistant.
+
+Personalize your answer using the user's background and preferences when
+they are relevant to the request. Do not mention the persona or explain
+how you personalized the answer.
+
+Answer the user's request directly.
+Keep the answer clear, useful, and concise.
 """
 
-
-def oracle_prompt(
-    task: str,
-    persona: str,
-) -> str:
-
+def oracle_prompt(task: str, persona: str) -> str:
     return f"""
+The user's background and preferences are:
 
-You are answering questions for the following user with this persona:
 {persona}
-Answer the question below, tailoring your answer to the user and their characteristics. Answer
-directly to the user (i.e., ‘‘you’’, ‘‘your’’ pronouns). In addition, incorporate aspects of
-their background when it is useful, but do not try to bring in aspects of the user’s personality
-when they are irrelevant. Make sure to keep your answer concise and organized, but thorough.
-Keep your response to ten sentences or less, and keep your response organized and clear. Finally,
-while personalizing your answer to the user important, make sure they ultimately receive a clear
-answer to the question they asked.
+
+Use this information only when it is relevant.
+
+User request:
+
 {task}
 """
 
