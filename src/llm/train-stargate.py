@@ -14,9 +14,8 @@ from prompt import format_conversation
 
 MODEL_NAME = "HuggingFaceTB/SmolLM2-360M-Instruct"
 
-# low number of trajectories and turns for now.
-NUM_TRAJECTORIES = 2
-MAX_TURNS = 2
+NUM_TRAJECTORIES = 5
+MAX_TURNS = 5
 
 OUTPUT_FILE = "stargate-data/stargate_iteration_1.json"
 
@@ -24,7 +23,6 @@ SEED = 42
 
 random.seed(SEED)
 
-# 5 tasks and 2 personas for now
 def load_tasks():
 
     with open(

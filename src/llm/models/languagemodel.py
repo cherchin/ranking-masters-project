@@ -6,11 +6,9 @@ class LanguageModel:
 
     def __init__(self, model_name):
 
-        # Select device, using CPU for now
-        if torch.cuda.is_available():
-            self.device = "cuda"
-        else:
-            self.device = "cpu"
+        # Prefer GPU when available, otherwise fall back to CPU
+        self.device = "cuda" if torch.cuda.is_available() else "cpu"
+        dtype = torch.float16 if self.device == "cuda" else torch.float32
 
         print(f"Loading model on {self.device}")
 
@@ -21,11 +19,6 @@ class LanguageModel:
 
         if self.tokenizer.pad_token is None:
             self.tokenizer.pad_token = self.tokenizer.eos_token
-
-        elif self.device == "cuda":
-            dtype = torch.float16
-        else:
-            dtype = torch.float32
 
         print(f"Using dtype: {dtype}")
 
@@ -132,6 +125,7 @@ class LanguageModel:
 
         return response.strip()
 
+# scoring function: log probability of target (gold response) given prompt (conversation)
     def score(
             self,
             prompt,

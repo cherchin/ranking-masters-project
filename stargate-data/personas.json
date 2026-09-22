@@ -8,5 +8,245 @@
     "id": "persona_002",
     "name": "Jamie",
     "description": "Jamie is a working professional who values convenience and quality. They are willing to spend more for products that save time. They strongly value reliability and good design. They dislike complicated solutions. They frequently travel for work."
+  },
+  {
+    "id": "persona_003",
+    "name": "Morgan",
+    "description": "Morgan is a software engineer who values performance and flexibility. They enjoy customizable tools, dislike unnecessary complexity, and often work across multiple devices throughout the day."
+  },
+  {
+    "id": "persona_004",
+    "name": "Taylor",
+    "description": "Taylor is a teacher who prioritizes durability and ease of use. They prefer products that are reliable for everyday classroom use and avoid anything that requires constant setup or maintenance."
+  },
+  {
+    "id": "persona_005",
+    "name": "Riley",
+    "description": "Riley is a freelance designer with a creative workflow. They appreciate premium aesthetics, strong brand identity, and ownership of their tools, but they resent overpriced products with weak functionality."
+  },
+  {
+    "id": "persona_006",
+    "name": "Casey",
+    "description": "Casey is a recent graduate entering the workforce and is cautious with spending. They prefer budget-friendly options, clean interfaces, and products that help them stay organized without a learning curve."
+  },
+  {
+    "id": "persona_007",
+    "name": "Jordan",
+    "description": "Jordan is a parent of two who values practicality and safety. They prefer products that are easy for the whole family to use and dislike anything that feels fragile or difficult to troubleshoot."
+  },
+  {
+    "id": "persona_008",
+    "name": "Skyler",
+    "description": "Skyler is a marketing manager who needs quick access to collaborative tools. They value speed, communication, and polished experiences, and they dislike rigid systems that slow down campaigns."
+  },
+  {
+    "id": "persona_009",
+    "name": "Parker",
+    "description": "Parker is a gamer and streamer who loves high performance and visual quality. They are willing to spend on premium gear but dislike products that underdeliver or overpromise."
+  },
+  {
+    "id": "persona_010",
+    "name": "Harper",
+    "description": "Harper is a startup founder focused on growth. They value efficiency, scalability, and tools that support a busy schedule, and they avoid solutions that add unnecessary operational overhead."
+  },
+  {
+    "id": "persona_011",
+    "name": "Quinn",
+    "description": "Quinn is a healthcare administrator who values reliability and compliance. They need dependable systems, clear data presentation, and easy support access, and they dislike clunky user experiences."
+  },
+  {
+    "id": "persona_012",
+    "name": "Emerson",
+    "description": "Emerson is a photographer who values image quality and portability. They prefer equipment and apps that support creative work on the go and dislike anything that feels too heavy or cumbersome."
+  },
+  {
+    "id": "persona_013",
+    "name": "Avery",
+    "description": "Avery is a project coordinator who likes structure and consistency. They appreciate clean workflows, excellent integration, and straightforward documentation, and they dislike confusing settings menus."
+  },
+  {
+    "id": "persona_014",
+    "name": "Blake",
+    "description": "Blake is a fitness trainer who values mobility and simplicity. They prefer tools that help them stay organized and active, and they dislike products that feel unnecessary or overly complicated."
+  },
+  {
+    "id": "persona_015",
+    "name": "Cameron",
+    "description": "Cameron is a college athlete with a busy schedule. They want durable, portable products that fit an active lifestyle and avoid anything that takes too much effort to maintain or carry."
+  },
+  {
+    "id": "persona_016",
+    "name": "Drew",
+    "description": "Drew is a sales representative who travels often. They value convenience, battery life, and fast setup, and they dislike devices that fail in transit or require frequent charging."
+  },
+  {
+    "id": "persona_017",
+    "name": "Reese",
+    "description": "Reese is a nonprofit coordinator who is cost-conscious and mission-driven. They prefer practical tools that support team collaboration and avoid premium features they do not truly need."
+  },
+  {
+    "id": "persona_018",
+    "name": "Sage",
+    "description": "Sage is an interior designer with an eye for detail. They care about aesthetics, user experience, and high-quality materials, and they dislike products that look cheap or feel generic."
+  },
+  {
+    "id": "persona_019",
+    "name": "Finley",
+    "description": "Finley is a data analyst who values organization and precision. They prefer tools that handle complexity cleanly, provide useful insights, and avoid interfaces that hide important information."
+  },
+  {
+    "id": "persona_020",
+    "name": "Hayden",
+    "description": "Hayden is a small business owner balancing many responsibilities. They want reliable systems that save time and support growth, and they dislike tools that require too much technical support."
+  },
+  {
+    "id": "persona_021",
+    "name": "Rowan",
+    "description": "Rowan is a remote worker who values comfort and productivity. They prefer ergonomic setups, quiet performance, and simple software, and they avoid cluttered interfaces and noisy hardware."
+  },
+  {
+    "id": "persona_022",
+    "name": "Brooklyn",
+    "description": "Brooklyn is a content creator focused on storytelling and audience growth. They value good visual quality, easy publishing workflows, and polished tools, and they dislike anything that breaks their creative momentum."
+  },
+  {
+    "id": "persona_023",
+    "name": "Dakota",
+    "description": "Dakota is a logistics coordinator managing time-sensitive tasks. They need dependable tools that streamline scheduling and communication, and they dislike confusing systems that create delays."
+  },
+  {
+    "id": "persona_024",
+    "name": "Robin",
+    "description": "Robin is a part-time student and retail worker. They prioritize affordability, reliability, and convenience, and they dislike products that need constant updates or replacements."
+  },
+  {
+    "id": "persona_025",
+    "name": "Ari",
+    "description": "Ari is a product manager who cares about workflows and customer outcomes. They value tools that are intuitive, collaborative, and scalable, and they dislike fragmented systems."
+  },
+  {
+    "id": "persona_026",
+    "name": "Charlie",
+    "description": "Charlie is an event planner with a fast-paced schedule. They appreciate organized tools, strong communication features, and portability, and they dislike anything that adds friction during live events."
+  },
+  {
+    "id": "persona_027",
+    "name": "Elliot",
+    "description": "Elliot is a hobbyist programmer who likes experimentation. They enjoy flexible tools and open-ended workflows, but they avoid overly restrictive systems that limit customization."
+  },
+  {
+    "id": "persona_028",
+    "name": "Sam",
+    "description": "Sam is a retail manager who values speed and simplicity. They need practical tools that help their team work efficiently, and they dislike anything that is difficult to learn or adopt."
+  },
+  {
+    "id": "persona_029",
+    "name": "Kendall",
+    "description": "Kendall is a public relations specialist who values strong presentation and responsiveness. They prefer polished tools that help them manage campaigns quickly and avoid messy integrations."
+  },
+  {
+    "id": "persona_030",
+    "name": "Milo",
+    "description": "Milo is a university researcher focused on accuracy and efficiency. They value trustworthy tools, clear data handling, and excellent documentation, and they dislike unreliable software."
+  },
+  {
+    "id": "persona_031",
+    "name": "Lee",
+    "description": "Lee is a construction supervisor who needs rugged and dependable equipment. They prioritize durability, ease of use, and strong support, and they avoid products that are difficult to repair."
+  },
+  {
+    "id": "persona_032",
+    "name": "Noah",
+    "description": "Noah is a software sales representative who often demonstrates products live. They value presentation quality, seamless usability, and quick setup, and they dislike anything that feels buggy."
+  },
+  {
+    "id": "persona_033",
+    "name": "Sofia",
+    "description": "Sofia is a customer success manager who works across many accounts. They prefer tools that make collaboration effortless, reduce busywork, and avoid systems that create duplicate tasks."
+  },
+  {
+    "id": "persona_034",
+    "name": "Theo",
+    "description": "Theo is an aspiring entrepreneur with a lean budget. They seek versatile tools, fast learning curves, and strong ROI, and they avoid products that need excessive setup or monthly lock-ins."
+  },
+  {
+    "id": "persona_035",
+    "name": "Nora",
+    "description": "Nora is an elementary school teacher who values accessibility and simplicity. She prefers tools that help children learn easily, and she avoids products with clutter, confusing instructions, or poor support."
+  },
+  {
+    "id": "persona_036",
+    "name": "Will",
+    "description": "Will is a mechanical engineer who values precision and reliability. They want durable tools with clear functionality and avoid products that feel flimsy or lack technical depth."
+  },
+  {
+    "id": "persona_037",
+    "name": "Ivy",
+    "description": "Ivy is a travel blogger who needs devices that are lightweight, flexible, and dependable. They prefer products that help them capture content anywhere and dislike bulky accessories."
+  },
+  {
+    "id": "persona_038",
+    "name": "Miles",
+    "description": "Miles is a restaurant owner managing staff and operations. They value efficiency, consistency, and affordable solutions, and they dislike tools that require too much training or upkeep."
+  },
+  {
+    "id": "persona_039",
+    "name": "Luna",
+    "description": "Luna is a social media manager who handles content calendars across multiple brands. They need fast, organized workflows, polished outputs, and tools that simplify collaboration."
+  },
+  {
+    "id": "persona_040",
+    "name": "Ethan",
+    "description": "Ethan is a cybersecurity analyst who values security, clarity, and performance. They prefer trustworthy systems with detailed reporting and avoid anything that feels opaque or unreliable."
+  },
+  {
+    "id": "persona_041",
+    "name": "Zoe",
+    "description": "Zoe is a graphic designer who values craftsmanship and visual polish. They appreciate premium design, smooth workflows, and responsive support, and they dislike products that look unfinished."
+  },
+  {
+    "id": "persona_042",
+    "name": "Owen",
+    "description": "Owen is a field technician who works outdoors in varying conditions. They need rugged, reliable tools and prefer products that are easy to carry, maintain, and repair."
+  },
+  {
+    "id": "persona_043",
+    "name": "Stella",
+    "description": "Stella is a community organizer who values accessibility and simplicity. They prefer tools that support coordination, communication, and volunteer management without excessive complexity."
+  },
+  {
+    "id": "persona_044",
+    "name": "Leo",
+    "description": "Leo is a mobile app developer who cares about speed, flexibility, and development efficiency. They prefer tools with strong integration options and avoid overly rigid ecosystems."
+  },
+  {
+    "id": "persona_045",
+    "name": "Paige",
+    "description": "Paige is a freelance writer who works from home and values comfort and focus. They prefer quiet, efficient tools and dislike cluttered or distracting workflows that slow productivity."
+  },
+  {
+    "id": "persona_046",
+    "name": "Jasper",
+    "description": "Jasper is a product tester who pays close attention to quality and usability. They appreciate honest features, clear feedback, and reliability, and they dislike brand hype or weak performance."
+  },
+  {
+    "id": "persona_047",
+    "name": "Maya",
+    "description": "Maya is a nurse working long shifts who values convenience and ease of use. They need dependable tools that reduce stress, improve access to information, and avoid complicated setups."
+  },
+  {
+    "id": "persona_048",
+    "name": "Isaac",
+    "description": "Isaac is an IT support specialist who values reliability, speed, and clear troubleshooting. They prefer tools that work consistently across environments and avoid products that create recurring support issues."
+  },
+  {
+    "id": "persona_049",
+    "name": "Ella",
+    "description": "Ella is a small studio owner who balances creativity and operations. They want tools that feel polished, save time, and support a smooth customer experience, and they dislike unnecessary friction."
+  },
+  {
+    "id": "persona_050",
+    "name": "Lucian",
+    "description": "Lucian is a finance analyst who values accuracy, clarity, and efficiency. They prefer structured tools with strong data handling and dislike cluttered interfaces or poor reporting features."
   }
-]
+]  
