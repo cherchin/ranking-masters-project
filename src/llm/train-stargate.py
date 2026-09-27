@@ -22,7 +22,7 @@ parser.add_argument(
 args = parser.parse_args()
 
 BATCH_INDEX = args.batch
-BATCH_SIZE = 20
+BATCH_SIZE = 10
 
 # CONFIG
 
