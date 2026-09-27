@@ -9,6 +9,20 @@ from models.oracle import Oracle
 from models.scorer import Scorer
 from models.languagemodel import LanguageModel
 from prompt import format_conversation
+import argparse
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument(
+    "--batch",
+    type=int,
+    required=True,
+)
+
+args = parser.parse_args()
+
+BATCH_INDEX = args.batch
+BATCH_SIZE = 20
 
 # CONFIG
 
@@ -17,11 +31,13 @@ MODEL_NAME = "HuggingFaceTB/SmolLM2-360M-Instruct"
 NUM_TRAJECTORIES = 5
 MAX_TURNS = 5
 
-OUTPUT_FILE = "stargate-data/stargate_iteration_1.json"
+OUTPUT_FILE = (
+    f"stargate-data/"
+    f"stargate_batch_{BATCH_INDEX + 1}.json"
+)
 
-SEED = 42
-
-random.seed(SEED)
+SEED = 42 + BATCH_INDEX
+random.seed(SEED) #each batch is independently generated
 
 def load_tasks():
 
@@ -43,7 +59,6 @@ def load_personas():
 
         return json.load(f)
 personas = load_personas()
-
 
 def simulate_conversation(
     questioner,
@@ -279,10 +294,19 @@ def main():
 
     tasks = load_tasks()
 
-    print(
-        f"\nTasks: {len(tasks)}"
+
+    start = BATCH_INDEX * BATCH_SIZE
+    end = min(
+        start + BATCH_SIZE,
+        len(tasks),
     )
 
+    batch_tasks = tasks[start:end]
+
+    print(
+        f"Processing tasks {start}–{end - 1} "
+        f"({len(batch_tasks)} tasks)"
+    )
     print(
         f"Personas: {len(personas)}"
     )
@@ -294,13 +318,13 @@ def main():
 
     gold_responses = generate_gold_responses(
         oracle=oracle,
-        tasks=tasks,
+        tasks=batch_tasks,
     )
 
     candidates = generate_candidates(
         questioner=questioner,
         roleplayer=roleplayer,
-        tasks=tasks,
+        tasks=batch_tasks,
     )
 
     print(
