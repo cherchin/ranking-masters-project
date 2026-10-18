@@ -282,7 +282,7 @@ def main():
     scorer = Scorer(model=shared_model)
 
     print("\nInitializing Gemini Oracle...")
-    oracle = Oracle()
+    oracle = Gemini_Oracle()
 
     tasks = load_tasks()
     start = BATCH_INDEX * BATCH_SIZE
