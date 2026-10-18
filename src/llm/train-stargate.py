@@ -1,11 +1,13 @@
 import json
 import os
 import random
+import dotenv
 
 from tqdm import tqdm
 from models.questioner import Questioner
 from models.roleplayer import Roleplayer
 from models.oracle import Oracle
+from models.gemini_oracle import Gemini_Oracle
 from models.scorer import Scorer
 from models.languagemodel import LanguageModel
 from prompt import format_conversation
@@ -26,7 +28,8 @@ BATCH_SIZE = 10
 
 # CONFIG
 
-MODEL_NAME = "HuggingFaceTB/SmolLM2-360M-Instruct"
+# MODEL_NAME = "HuggingFaceTB/SmolLM2-360M-Instruct"
+MODEL_NAME = "mistralai/Mistral-7B-Instruct-v0.3"
 
 NUM_TRAJECTORIES = 5
 MAX_TURNS = 5
@@ -267,54 +270,31 @@ def save_dataset(
     print(
         f"\nSaved {len(examples)} examples to {filename}"
     )
-
 def main():
-
-    print("\nInitializing models...")
+    print("\nInitializing local Mistral model...")
 
     shared_model = LanguageModel(
         model_name=MODEL_NAME
     )
 
-    questioner = Questioner(
-        model=shared_model
-    )
+    questioner = Questioner(model=shared_model)
+    roleplayer = Roleplayer(model=shared_model)
+    scorer = Scorer(model=shared_model)
 
-    roleplayer = Roleplayer(
-        model=shared_model
-    )
-
-    oracle = Oracle(
-        model=shared_model
-    )
-
-    scorer = Scorer(
-        model=shared_model
-    )
+    print("\nInitializing Gemini Oracle...")
+    oracle = Oracle()
 
     tasks = load_tasks()
-
-
     start = BATCH_INDEX * BATCH_SIZE
-    end = min(
-        start + BATCH_SIZE,
-        len(tasks),
-    )
-
+    end = min(start + BATCH_SIZE, len(tasks))
     batch_tasks = tasks[start:end]
 
     print(
         f"Processing tasks {start}–{end - 1} "
         f"({len(batch_tasks)} tasks)"
     )
-    print(
-        f"Personas: {len(personas)}"
-    )
-
-    print(
-        f"Trajectories per pair: "
-        f"{NUM_TRAJECTORIES}"
-    )
+    print(f"Personas: {len(personas)}")
+    print(f"Trajectories per pair: {NUM_TRAJECTORIES}")
 
     gold_responses = generate_gold_responses(
         oracle=oracle,
@@ -327,20 +307,10 @@ def main():
         tasks=batch_tasks,
     )
 
-    print(
-        f"\nGenerated "
-        f"{len(candidates)} conversations."
-    )
-
     selected = filter_conversations(
         scorer=scorer,
         candidates=candidates,
         gold_responses=gold_responses,
-    )
-
-    print(
-        f"\nSelected "
-        f"{len(selected)} best conversations."
     )
 
     selected = add_response_regularization(
@@ -352,7 +322,6 @@ def main():
         examples=selected,
         filename=OUTPUT_FILE,
     )
-
     print("SELECTED EXAMPLES")
 
     for example in selected[:3]:
@@ -386,3 +355,123 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# def main():
+
+#     print("\nInitializing models...")
+
+#     shared_model = LanguageModel(
+#         model_name=MODEL_NAME
+#     )
+
+#     questioner = Questioner(
+#         model=shared_model
+#     )
+
+#     roleplayer = Roleplayer(
+#         model=shared_model
+#     )
+
+#     oracle = Oracle(
+#         model=shared_model
+#     )
+
+#     scorer = Scorer(
+#         model=shared_model
+#     )
+
+#     tasks = load_tasks()
+
+
+#     start = BATCH_INDEX * BATCH_SIZE
+#     end = min(
+#         start + BATCH_SIZE,
+#         len(tasks),
+#     )
+
+#     batch_tasks = tasks[start:end]
+
+#     print(
+#         f"Processing tasks {start}–{end - 1} "
+#         f"({len(batch_tasks)} tasks)"
+#     )
+#     print(
+#         f"Personas: {len(personas)}"
+#     )
+
+#     print(
+#         f"Trajectories per pair: "
+#         f"{NUM_TRAJECTORIES}"
+#     )
+
+#     gold_responses = generate_gold_responses(
+#         oracle=oracle,
+#         tasks=batch_tasks,
+#     )
+
+#     candidates = generate_candidates(
+#         questioner=questioner,
+#         roleplayer=roleplayer,
+#         tasks=batch_tasks,
+#     )
+
+#     print(
+#         f"\nGenerated "
+#         f"{len(candidates)} conversations."
+#     )
+
+#     selected = filter_conversations(
+#         scorer=scorer,
+#         candidates=candidates,
+#         gold_responses=gold_responses,
+#     )
+
+#     print(
+#         f"\nSelected "
+#         f"{len(selected)} best conversations."
+#     )
+
+#     selected = add_response_regularization(
+#         questioner=questioner,
+#         selected=selected,
+#     )
+
+#     save_dataset(
+#         examples=selected,
+#         filename=OUTPUT_FILE,
+#     )
+
+#     print("SELECTED EXAMPLES")
+
+#     for example in selected[:3]:
+
+#         print(
+#             f"\nTask: {example['task']}"
+#         )
+
+#         print(
+#             f"Score: {example['score']:.3f}"
+#         )
+
+#         print(
+#             "\nConversation:"
+#         )
+
+#         print(
+#             format_conversation(
+#                 example["conversation"]
+#             )
+#         )
+
+#         print(
+#             "\nGenerated response:"
+#         )
+
+#         print(
+#             example["response"]
+#         )
+
+
+# if __name__ == "__main__":
+#     main()
+
